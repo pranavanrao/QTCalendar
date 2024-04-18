@@ -2,15 +2,17 @@
 
 #include <QApplication>
 #include <QCalendarWidget>
+#include <QVBoxLayout>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Widget w;
 
-    QCalendarWidget cal;
+    QVBoxLayout *layout = new QVBoxLayout(&w);
+    QCalendarWidget *cal = new QCalendarWidget(&w);
 
-    cal.show();
+    layout -> addWidget(cal, 0, Qt::AlignCenter);
 
     w.show();
     return a.exec();
